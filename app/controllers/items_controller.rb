@@ -9,8 +9,8 @@ render json: filter
 end
 
 def create
-    item = Item.create!(item_params)
-   render json: item
+item = Item.create!(item_params)
+render json: item
 end
 
 def index

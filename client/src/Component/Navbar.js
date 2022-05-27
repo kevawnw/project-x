@@ -4,11 +4,11 @@ import '../Style/Navbar.css'
 
 function Navbar() {
   return (
-    <div className='navbar' >
-      <nav>
+    <div>
+      <nav className='navbar'>
         <img className='logo' src="https://codetheweb.blog/assets/img/icon2.png" />
-        <div className='nav-links'>
-           <Link to='/'>Home</Link> 
+        <div className='nav-menu'>
+           <Link  to='/'>Home</Link> 
           <Link to='/about'>About</Link>
            <Link to='/Start_Shopping'>StartShopping</Link>
           <Link to='/profile'>Profile</Link>

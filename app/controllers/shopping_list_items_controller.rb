@@ -16,14 +16,10 @@ class ShoppingListItemsController < ApplicationController
         sli.build_shopping_list
         sli.save
         render json: sli
-        # sli = ShoppingListItem.create!(params.permit(:item_id, :shopping_list_id))
-        # render json: sli
+        
     end
 
-    # def update
-    #     sli = ShoppingListItem.update(params.permit(:item_id, :shopping_list_id))
-    #     render json: sli
-    # end
+   
 
     def set_list
         sli = ShoppingListItem.where(shopping_list_id: nil)

@@ -51,7 +51,7 @@ function ItemCard({food,  findMatchingItem}) {
         {modal ? 
           <div className="modal-background-mask">
             <div className='modal'>
-              <p className="close" onClick={close}>x</p>
+            <p className="close" onClick={close}>x</p>
               {mappeditem}
             </div>
           </div>

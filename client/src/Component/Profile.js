@@ -1,13 +1,18 @@
 import React from 'react'
 
-function Profile() {
+
+function Profile({setUser}) {
+  
   function logout(){
     fetch('/logout', {
-      method: "DELETE",
+      method: "DELETE"
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => setUser(null))
   }
+
+
+
   return (
     <div>
       <button onClick={logout}>Logout</button>

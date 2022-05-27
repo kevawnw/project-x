@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-    has_many :shopping_list_items, dependent: :destroy
+    has_many :shopping_list_item, dependent: :destroy
     has_many :shopping_lists, through: :shopping_list_items
 
     
