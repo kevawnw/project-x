@@ -9,7 +9,7 @@
 
 
 .navbar {
-     height: 60px;
+height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -24,8 +24,7 @@
    
 
    .nav-menu{
-       display: flex;
-       
+       display: flex; 
    }
 
    .nav-menu a{

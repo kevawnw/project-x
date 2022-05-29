@@ -1,14 +1,16 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
 import ShoplistCard from './ShoplistCard'
+import '../Style/Shoplist.css'
 
 function Shoplist() {
 const [lists, setLists] = useState([])
+const [runEffect, setRunEffect] = useState(true)
   useEffect(()=> {
     fetch('/shopping_lists')
     .then(res => res.json())
     .then(data => setLists(data))
-  },[])
+  },[runEffect])
 
   console.log(lists)
 
@@ -17,7 +19,7 @@ const [lists, setLists] = useState([])
   // })
 
   const mappedName = lists?.map(list => {
-    return <ShoplistCard list={list}/>
+    return <ShoplistCard list={list} setRunEffect={setRunEffect}/>
   })
 
  
@@ -25,7 +27,7 @@ const [lists, setLists] = useState([])
 
   return (
     <>
-    <div>
+    <div className='shop-list-container'>
      {mappedName}
     </div>
     </>

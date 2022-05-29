@@ -49,6 +49,10 @@ navigate('/')
         }
         else{setForms(true); setError(null)}
       })
+      .then(() => {
+        setUsername('')
+        setPassword('')
+      })
     }
 
   return (

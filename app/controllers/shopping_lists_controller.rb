@@ -1,4 +1,5 @@
 class ShoppingListsController < ApplicationController
+    before_action :find_list, only: [:update, :destroy]
 
     def show
         sl = ShoppingList.find_by!(id: params[:id])
@@ -17,7 +18,18 @@ class ShoppingListsController < ApplicationController
     end
 
     def update
-        sl = ShoppingList.update(params.permit(:name))
+        @sl.update(params.permit(:name))
+        render json: @sl
+    end
+
+    def destroy
+        @sl.destroy
+        render json: []
+    end
+
+    private
+    def find_list
+        @sl = ShoppingList.find_by!(id: params[:id])
     end
 
     

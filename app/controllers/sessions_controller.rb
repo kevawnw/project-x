@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
         session.delete :user_id
         ShoppingListItem.where(shopping_list_id: nil).destroy_all
         render json: []
-        # head :no_content
     end
 
 

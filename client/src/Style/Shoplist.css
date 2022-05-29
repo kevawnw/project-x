@@ -1,0 +1,24 @@
+.shop-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+
+.shop-list{
+    padding: 3vh;
+    width: 100vw;
+    align-self: center;
+    background-color: bisque;
+    margin: 4px;
+    
+}
+
+details > summary {
+    list-style: none;
+  }
+
+  summary{
+      position: relative;
+      left: 40%;
+  }

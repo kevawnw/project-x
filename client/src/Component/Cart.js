@@ -6,12 +6,13 @@ function Cart({user}) {
   console.log(user)
 
   const [cartitem, setCartItem] = useState([])
+  const [cartEffect, setCartEffect] = useState(true)
 
    useEffect(()=> {
      fetch("/cart")
      .then(res => res.json())
      .then(data => setCartItem(data))
-   },[])
+   },[cartEffect])
 
    function setlist(){
      fetch('/shopping_lists',{
@@ -31,14 +32,14 @@ function Cart({user}) {
          body: JSON.stringify({shopping_list_id: data.id})
        })
        .then(res => res.json())
-       .then(data => console.log(data))
+       .then(() => setCartEffect(prev => !prev))
      })
    }
 
    console.log(cartitem)
 
    const mappedItem = cartitem?.map(item => {
-     return <CartItem key={item} item={item}/>
+     return <CartItem key={item.id} item={item} setCartEffect={setCartEffect}/>
    })
 
 

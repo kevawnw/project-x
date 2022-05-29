@@ -1,14 +1,16 @@
 import React from 'react'
 import {useState} from 'react'
+import '../Style/Shoplist.css'
 
-function ShoplistCard({list}) {
+function ShoplistCard({list, setRunEffect}) {
+    
     console.log('list', list)
 
     const mappeditems = list.shopping_list_items?.map(li => {
-        return <p> {li.showitem.name}: ${li.showitem.price} Store: {li.showitem.store} </p>
+        return <p> {li.showitem.name} - Price: ${li.showitem.price} Store: {li.showitem.store} </p>
     }) 
 
-    function setName(){
+    function set_Name(){
         fetch(`/shopping_lists/${list.id}`,{
             method: "PATCH",
             headers: {
@@ -17,18 +19,26 @@ function ShoplistCard({list}) {
             body: JSON.stringify({})
         })
     }
+    // pause on this patch function
+
+    function removeList(){
+        fetch(`/shopping_lists/${list.id}`,{
+            method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(() => setRunEffect(prev => !prev))
+    }
    
   return (
-      <div>
+      <div className='shop-list'>
           <details>
               <summary>
-                  {list.name ? list.name : 'Enter A Name'}
-              </summary>
-              
+                  Name: {list.name ? list.name : 'Enter A Name'} -  Total Cost: ${list.total_amount}
+              </summary> 
                 {mappeditems}
-              
-              
           </details>
+          <button onClick={removeList}>Delete</button>
+          
       </div>
   )
 }

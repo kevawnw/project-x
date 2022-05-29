@@ -14,6 +14,8 @@ import Cart from './Component/Cart';
 
 function App() {
   const [user, setUser] = useState(null)
+ 
+
 
   useEffect(() => {
     fetch('/me')
@@ -25,7 +27,11 @@ function App() {
       else {setUser(data)}
     })
   },[])
+
+
   console.log(user)
+
+  
 
   
   return (
