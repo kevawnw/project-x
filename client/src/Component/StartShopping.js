@@ -27,8 +27,8 @@ console.log(food)
 
 return (
     <>
-    <div>
-      <input type='text' placeholder='search food here' onChange={(e) => setSearchFood(e.target.value)} value={searchFood} /><br/>
+    <div className="searchInput">
+      <input  type='text' placeholder='search food here' onChange={(e) => setSearchFood(e.target.value)} value={searchFood} /><br/>
       <button onClick={findItem}>Search food</button>
       <select onChange={(e) => SetNumOfResults(e.target.value)}>
         <option value={25}>25</option>
@@ -39,9 +39,9 @@ return (
     </div>
     <div className='item-container'>
         {food.product.length !== 0 && searchFood? food.product.map(food => {
-          return <ItemCard key={food.key} food={food} />
+          return <ItemCard key={food.id} food={food} />
         }) : 
-        <h1>Start searching food</h1>}
+        <h1 className="searchingTitle">Start searching food</h1>}
     </div>
   </>
   )

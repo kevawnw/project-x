@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import '../Style/ItemCard.css'
 import ModalCards from './ModalCards'
+import LoadingSpin from "react-loading-spin"
 
 function ItemCard({food,  findMatchingItem}) {
   const [modal, setModal] = useState(false)
-  const [matchingItem, setMatchingItem] = useState(null)
+  const [matchingItem, setMatchingItem] = useState([])
   
    
 
@@ -36,7 +37,6 @@ function ItemCard({food,  findMatchingItem}) {
 
     
 
-
     
     return (
       <>
@@ -50,9 +50,11 @@ function ItemCard({food,  findMatchingItem}) {
 
         {modal ? 
           <div className="modal-background-mask">
-            <div className='modal'>
-            <p className="close" onClick={close}>x</p>
-              {mappeditem}
+            
+              <div className='modal'>
+              <p className="close" onClick={close}>x</p>
+                {matchingItem?.length? mappeditem : <LoadingSpin/> }
+              
             </div>
           </div>
         : 

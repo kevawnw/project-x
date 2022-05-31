@@ -1,6 +1,9 @@
 import React from 'react'
 import '../Style/ItemCard.css'
+import {useState} from 'react'
 function ModalCards({item}) {
+
+  const [disbutton, setDisbutton] = useState(true)
 
     function addToCart(){
         fetch('/items',{
@@ -20,17 +23,27 @@ function ModalCards({item}) {
                 body: JSON.stringify({item_id: data.id})
               })
               .then(res => res.json())
-              .then(data => console.log(data))
+              .then(console.log)
         })
+        setDisbutton(false)
       }
 
   return (
+    <>
+    {item.name && item.price !==0 ?   
     <div className = 'modal-content'>
-        <p>{item.name}</p>
+      <div className='content'>
+        <h3>{item.name}</h3>
         <p>${item.price}</p>
         <p>Store: {item.store}</p>
-        <button onClick={addToCart}>Click here</button>
+        {disbutton? <button onClick={addToCart}>Add to Cart</button>: <button disabled>Added to cart</button> }
+        
+      </div>
     </div>
+    : 
+    null}
+  
+    </>
   )
 }
 

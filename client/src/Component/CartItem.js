@@ -1,9 +1,10 @@
 import React from 'react'
+import '../Style/Cartitem.css'
 
 function CartItem({item, setCartEffect}) {
 
   
-  console.log(item.id)
+  console.log(item)
 
 let quantity = []
 for(let i = 1; i < 11; i++){
@@ -19,8 +20,16 @@ function setQuantity(e){
     body: JSON.stringify({quantity: e.target.value})
   })
   .then(res => res.json())
-  .then(data => setCartEffect(prev => !prev))
+  .then(() => setCartEffect(prev => !prev))
 
+}
+
+function removeItem(){
+  fetch(`/shopping_list_items/${item.id}`,{
+    method: 'DELETE'
+  })
+  .then(res => res.json())
+  .then(() => setCartEffect(prev => !prev))
 }
    
   return (
@@ -29,7 +38,8 @@ function setQuantity(e){
         <p>Price: ${item.item.price} per item</p>
         <p>Quantity: {item.item.quantity} <select onChange={setQuantity}><option value= 'none' selected disabled hidden>Select a option</option>{quantity}</select></p>
         <p>Store: {item.showitem.store}</p>
-        <p>Total Cost: ${item.item.total_cost}</p><br/>
+        <p>Total Cost: ${item.item.total_cost}</p>
+        <p className='remove' onClick={removeItem}>Remove</p><br/>
     </div>
   )
 }

@@ -16,7 +16,12 @@ class ShoppingListItemsController < ApplicationController
         sli.build_shopping_list
         sli.save
         render json: sli
-        
+    end
+
+    def destroy
+        sli = ShoppingListItem.find_by!(id: params[:id])
+        sli.destroy
+        render json: []
     end
 
    

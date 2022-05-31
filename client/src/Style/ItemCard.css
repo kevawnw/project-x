@@ -29,15 +29,23 @@
   /* Modal Content */
   .modal-content {
     background-color: #fefefe;
-    margin: auto;
     padding: 20px;
-    border: 1px solid #888 .5px;
-    width: 80%;
+    margin: 5px;
     position: relative;
     align-items: center;
     justify-content: center;
-  
-   
+    display: flex;
+  }
+
+  /* .modal-content .content {
+    width: fit-content;
+    height: 100%;
+  } */
+
+ 
+
+  .modal-content h3 {
+    font-size: 1em;
   }
   
   /* The Close Button */
@@ -76,3 +84,13 @@
   .item-content{
     text-align: center;
   }
+
+ .close{
+   position: fixed;
+   left: 95%;
+   bottom: 87%;
+ }
+
+ 
+
+

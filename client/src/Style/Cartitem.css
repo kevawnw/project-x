@@ -1,0 +1,7 @@
+.remove {
+    text-decoration: underline;
+}
+
+.remove:hover{
+cursor: pointer;
+}

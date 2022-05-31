@@ -3,15 +3,27 @@
     flex-direction: column;
     align-items: center;
     background-color: aqua;
+    font-size: 14px;
+    height: 100vh;
 }
 
 .shop-list{
     padding: 3vh;
-    width: 100vw;
+    width: 40vw;
     align-self: center;
     background-color: bisque;
     margin: 4px;
+    margin-top: 12px;
     
+}
+
+.deleteButton {
+    border: none; 
+    font-size: 16px;   
+}
+
+.deleteButton:hover {
+    text-decoration: underline;
 }
 
 details > summary {
@@ -22,3 +34,4 @@ details > summary {
       position: relative;
       left: 40%;
   }
+

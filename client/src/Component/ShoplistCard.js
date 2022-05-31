@@ -7,7 +7,7 @@ function ShoplistCard({list, setRunEffect}) {
     console.log('list', list)
 
     const mappeditems = list.shopping_list_items?.map(li => {
-        return <p> {li.showitem.name} - Price: ${li.showitem.price} Store: {li.showitem.store} </p>
+        return <ul> <li><p>{li.showitem.name}</p>  <p> ${li.showitem.price}</p> <p>Store: {li.showitem.store}</p></li> </ul>
     }) 
 
     function set_Name(){
@@ -33,12 +33,11 @@ function ShoplistCard({list, setRunEffect}) {
       <div className='shop-list'>
           <details>
               <summary>
-                  Name: {list.name ? list.name : 'Enter A Name'} -  Total Cost: ${list.total_amount}
+                  Name: {list.name ? list.name : 'Enter A Name...'} -  Total Cost: ${list.total_amount}
               </summary> 
                 {mappeditems}
           </details>
-          <button onClick={removeList}>Delete</button>
-          
+          <button className="deleteButton" onClick={removeList}>Delete</button><br/>
       </div>
   )
 }
