@@ -1,23 +1,13 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom"
 
 
-function Profile({setUser}) {
-  let navigate = useNavigate()
+
+function Profile() {
   
- async function logout(){
-   await fetch('/logout', {
-      method: "DELETE"
-    })
-    .then(res => res.json())
-    .then(() => setUser(null))
-     navigate('/')
-  }
-
 
   return (
     <div>
-      <button onClick={logout}>Logout</button>
+      <button>Logout</button>
     </div>
   )
 }

@@ -27,7 +27,7 @@ height: 60px;
        display: flex; 
    }
 
-   .nav-menu a{
+   .nav-menu a, .header-faker{
        color: purple;
        padding: 0;
        margin: 0 1rem;
@@ -38,10 +38,15 @@ height: 60px;
        font-size: 1em;
    }
 
-   .nav-menu a:hover{
+   .nav-menu a:hover, .header-faker:hover{
        color:black;
        text-decoration: underline;
        color: yellow;
+   }
+
+   .header-faker{
+       background-color: #d8cda0;
+       border: none;
    }
    
    

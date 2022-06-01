@@ -51,9 +51,9 @@ function ItemCard({food,  findMatchingItem}) {
         {modal ? 
           <div className="modal-background-mask">
             
-              <div className='modal'>
+              <div className='modal' style={matchingItem?.length?  null : {display: 'inline-block'}}>
               <p className="close" onClick={close}>x</p>
-                {matchingItem?.length? mappeditem : <LoadingSpin/> }
+                {matchingItem?.length? mappeditem : <div className = 'loading'><LoadingSpin size={250}/></div> }
               
             </div>
           </div>

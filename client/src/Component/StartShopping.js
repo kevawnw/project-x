@@ -2,6 +2,7 @@ import React from 'react'
 import {useEffect, useState} from 'react'
 import ItemCard from './ItemCard'
 import '../Style/ItemCard.css'
+import '../Style/StartShopping.css'
 
 function StartShopping() {
     const defaultState = {product: '', simplefood: ''}
@@ -26,24 +27,25 @@ console.log(food)
 
 
 return (
-    <>
+  <div className='img-repeat'>
     <div className="searchInput">
-      <input  type='text' placeholder='search food here' onChange={(e) => setSearchFood(e.target.value)} value={searchFood} /><br/>
-      <button onClick={findItem}>Search food</button>
-      <select onChange={(e) => SetNumOfResults(e.target.value)}>
+      <input className="inputSearch" type='text' placeholder='search food here' onChange={(e) => setSearchFood(e.target.value)} value={searchFood} /><br />
+      <button className='searchButton' onClick={findItem}>Search food</button>
+      <select className='selc' onChange={(e) => SetNumOfResults(e.target.value)}>
         <option value={25}>25</option>
         <option value={50}>50</option>
         <option value={75}>75</option>
         <option value={100}>100</option>
       </select>
     </div>
-    <div className='item-container'>
-        {food.product.length !== 0 && searchFood? food.product.map(food => {
-          return <ItemCard key={food.id} food={food} />
-        }) : 
-        <h1 className="searchingTitle">Start searching food</h1>}
+    <div className={food.product.length !== 0 && searchFood ? 'item-container' : null}>
+      {food.product.length !== 0 && searchFood ? food.product.map(food => {
+        return <ItemCard key={food.id} food={food} />
+      }) :
+        <h1 className="searchingTitle">Start searching for food</h1>
+      }
     </div>
-  </>
+  </div>
   )
 }
 

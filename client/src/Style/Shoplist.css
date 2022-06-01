@@ -1,15 +1,31 @@
-.shop-list-container{
+/* .shop-list-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background-color: rgb(164, 77, 149);
     font-size: 14px;
+    height: 100%;
+} */
+
+.shop-list-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    /* background-color: rgb(164, 77, 149); */
+    font-size: 14px;
+    height: 100%;
+}
+
+.shoplist-page{
+    background-color: rgb(164, 77, 149);
     height: 100vh;
 }
 
+
 .shop-list{
     padding: 3vh;
-    width: 40vw;
+    width: 30vw;
+    border-radius: 40px;
     align-self: center;
     background-color: bisque;
     margin: 4px;

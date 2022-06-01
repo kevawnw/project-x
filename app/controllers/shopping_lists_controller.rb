@@ -12,8 +12,9 @@ class ShoppingListsController < ApplicationController
     end
 
     def create
-        count = ShoppingList.all.where(user_id: session[:user_id]).length
-        sl = ShoppingList.create!(name: "Shopping-list-#{count + 1}", user_id: params[:user_id] ) #try to set a default user_id to sessions id
+        # count = ShoppingList.all.where(user_id: session[:user_id]).length
+        # sl = ShoppingList.create!(name: "Shopping-list-#{count + 1}", user_id: params[:user_id] ) #try to set a default user_id to sessions id
+        sl = ShoppingList.create!(name: params[:name], user_id: params[:user_id])
         render json: sl
     end
 

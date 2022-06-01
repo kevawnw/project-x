@@ -3,11 +3,17 @@ import {useState} from 'react'
 import '../Style/Shoplist.css'
 
 function ShoplistCard({list, setRunEffect}) {
+
+    let dollarUS = Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+    
     
     console.log('list', list)
 
     const mappeditems = list.shopping_list_items?.map(li => {
-        return <ul> <li><p>{li.showitem.name}</p>  <p> ${li.showitem.price}</p> <p>Store: {li.showitem.store}</p></li> </ul>
+        return <ul> <li><p>{li.showitem.name}</p>  <p>Price: {dollarUS.format(li.showitem.price)}</p> <p>Quantity: {li.showitem.quantity}</p> <p>Store: {li.showitem.store}</p></li> </ul>
     }) 
 
     function set_Name(){
@@ -33,7 +39,7 @@ function ShoplistCard({list, setRunEffect}) {
       <div className='shop-list'>
           <details>
               <summary>
-                  Name: {list.name ? list.name : 'Enter A Name...'} -  Total Cost: ${list.total_amount}
+                  Name: {list.name ? list.name : 'Enter A Name...'} -  Total Cost: {dollarUS.format(list.total_amount)}
               </summary> 
                 {mappeditems}
           </details>

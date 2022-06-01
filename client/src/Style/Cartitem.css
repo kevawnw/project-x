@@ -5,3 +5,46 @@
 .remove:hover{
 cursor: pointer;
 }
+
+.make-list-button{
+    background-color: rgb(56, 136, 56);
+    position: sticky;
+    bottom: 5px;
+    width: 30%;
+    font-size: large;
+    padding: 1%;
+    border-radius: 7px;
+}
+
+.make-list-button:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cart-backg{
+    background-image: url('https://thumbs.dreamstime.com/b/fruits-vegetables-fresh-color-healthy-food-concept-62730415.jpg');
+    min-height: 100vh;
+
+}
+
+.cart-container{
+    text-align: center;
+    display: table-cell;
+    width: 50vw;
+    /* height: 85vh; */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: rgb(175, 129, 204);
+    left: 42%;
+}
+
+.navigate{
+    color: purple;
+    text-align: center;
+}
+
+.navigate:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -26,11 +26,11 @@ const [runEffect, setRunEffect] = useState(true)
 
 
   return (
-    <>
-    <div className='shop-list-container'>
-     {mappedName}
+    <div className='shoplist-page'>
+      <div className='shop-list-container'>
+        {mappedName}
+      </div>
     </div>
-    </>
   )
 }
 

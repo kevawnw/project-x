@@ -1,8 +1,31 @@
 .searchInput {
     text-align: center;
+
 }
 
-h1.searchingTitle {
+.inputSearch {
+    width: 50vw;
+    height: 4vh;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-size: 1em;
+}
+
+.searchingTitle {
     text-align: center;
-    color: blue;
+    color: rgb(0, 0, 0);
+    margin-top: 8%;
+}
+
+.searchInput .searchButton, .selc {
+    font-size: 1.1em;
+    background-color: white;
+    border-width: thin;
+    border-radius: 3px;
+    margin: 3px;
+}
+
+.img-repeat{
+    background-image: url('https://media.istockphoto.com/photos/shopping-basket-full-of-variety-of-grocery-products-food-and-drink-on-picture-id1319625327?b=1&k=20&m=1319625327&s=170667a&w=0&h=FRRQT4yPOTumTJkCOmthHBcRvzoGvqw7drlSlYZhUNo=');
+    min-height: 100vh;
 }

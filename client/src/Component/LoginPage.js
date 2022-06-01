@@ -69,10 +69,10 @@ navigate('/')
         <input type='text' onChange={(e) => setUsername(e.target.value)} value={username} /><br />
         <label>Password</label><br />
         <input type='password' onChange={(e) => setPassword(e.target.value)} value={password} /><br/>
-        <button type='submit'>submit</button>
+        <button className = 'login-button'type='submit'>Submit</button>
         <div>
       <div className='error'>{error? error.error : null}</div>
-          <p onClick={()=> setForms(false) }>No Account? Signup Here</p>
+          <p className='account' onClick={()=> setForms(false) }>No Account? Signup Here</p>
         </div>
       </form>
       
@@ -98,7 +98,7 @@ navigate('/')
         <button type='submit'>submit</button>
       </form>
       <div className='error'>{error? error.error : null}</div>
-      <p onClick={()=> setForms(true)}>Already have a account? Signin Here</p>
+      <p className= 'account' onClick={()=> setForms(true)}>Already have a account? Signin Here</p>
     </div>
   </div>
 

@@ -19,8 +19,12 @@
 
 .form-content-login{
     position: relative;
-    top: 35%;
+    top: 20%;
     left: 30%;
+}
+
+.form-content-login input{
+    margin-bottom: 1em;
 }
 
 .error{
@@ -34,4 +38,16 @@
     position: relative;
     top: 4px;
     left: 38%;
+}
+
+.login-button{
+    border: none;
+    margin-bottom: 1em;
+    color: blueviolet;
+}
+
+.account:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: blueviolet;
 }

@@ -79,6 +79,7 @@
     width: 25rem;
     height: 25rem;
     border: #000 solid .5px;
+    background-color: cornsilk;
   }
 
   .item-content{
@@ -91,6 +92,10 @@
    bottom: 87%;
  }
 
- 
+ .loading{
+   text-align: center;
+   
+   
+ }
 
 

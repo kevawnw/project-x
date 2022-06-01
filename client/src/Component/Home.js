@@ -11,7 +11,8 @@ function Home({user}) {
 
   return (
     <div className='home'>
-      <p>Welcome to Shopper App That find alternative cheaper version of a item. {user.name} </p>
+      <h1>Welcome to Shopper App That find alternative cheaper version of a item. {user.name} </h1>
+      <p>thing about the site</p>
 
       
       
