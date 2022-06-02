@@ -4,7 +4,7 @@ import '../Style/ItemCard.css'
 import ModalCards from './ModalCards'
 import LoadingSpin from "react-loading-spin"
 
-function ItemCard({food,  findMatchingItem}) {
+function ItemCard({food,  findMatchingItem, setCartEffect}) {
   const [modal, setModal] = useState(false)
   const [matchingItem, setMatchingItem] = useState([])
   
@@ -32,7 +32,7 @@ function ItemCard({food,  findMatchingItem}) {
   }
 
   const mappeditem = matchingItem?.map(item => {
-    return <ModalCards key={item.id} item={item}/>
+    return <ModalCards key={item.id} item={item} setCartEffect={setCartEffect}/> 
   })
 
     

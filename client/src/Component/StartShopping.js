@@ -4,7 +4,7 @@ import ItemCard from './ItemCard'
 import '../Style/ItemCard.css'
 import '../Style/StartShopping.css'
 
-function StartShopping() {
+function StartShopping({setCartEffect}) {
     const defaultState = {product: '', simplefood: ''}
 
 
@@ -40,7 +40,7 @@ return (
     </div>
     <div className={food.product.length !== 0 && searchFood ? 'item-container' : null}>
       {food.product.length !== 0 && searchFood ? food.product.map(food => {
-        return <ItemCard key={food.id} food={food} />
+        return <ItemCard key={food.id} food={food} setCartEffect={setCartEffect}/>
       }) :
         <h1 className="searchingTitle">Start searching for food</h1>
       }

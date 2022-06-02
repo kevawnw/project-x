@@ -2,7 +2,7 @@ import React from 'react'
 import '../Style/ItemCard.css'
 import {useState} from 'react'
 
-function ModalCards({item}) {
+function ModalCards({item, setCartEffect}) {
 
   const [disbutton, setDisbutton] = useState(true)
 
@@ -25,8 +25,11 @@ function ModalCards({item}) {
               })
               .then(res => res.json())
               .then(console.log)
+              
         })
         setDisbutton(false)
+        setCartEffect(prev => !prev)
+      
       }
 
   return (

@@ -5,11 +5,11 @@ import '../Style/Cartitem.css'
 import { useNavigate } from "react-router-dom"
 
 
-function Cart({user}) {
+function Cart({user, cartitem, setCartEffect, cartEffect, setCartItem}) {
   let navigate = useNavigate()
 
-  const [cartitem, setCartItem] = useState([])
-  const [cartEffect, setCartEffect] = useState(true)
+  // const [cartitem, setCartItem] = useState([])
+  // const [cartEffect, setCartEffect] = useState(true)
 
    useEffect(()=> {
      fetch("/cart")
@@ -52,7 +52,7 @@ function Cart({user}) {
   return (
     <div className= 'cart-backg'>
       <div className= {cartitem?.length? 'cart-container' : null}>
-      {cartitem?.length? mappedItem : <h1 className= 'navigate' onClick={()=> navigate('/Start_Shopping')}>Click here to start finding items</h1>}
+      {cartitem?.length? mappedItem : <h1 className= 'navigate' onClick={()=> navigate('/')}>Click here to start finding items</h1>}
       {cartitem?.length? <button className= 'make-list-button' onClick={setlist}>Create Shopping List</button>: null}
       </div>
     </div>

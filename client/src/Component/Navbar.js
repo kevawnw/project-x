@@ -4,8 +4,13 @@ import '../Style/Navbar.css'
 import { TbLogout } from 'react-icons/tb'
 import { useNavigate } from "react-router-dom"
 import  bag from '../Image/shopping-bag.png'
+import {TiShoppingCart} from 'react-icons/ti'
+import {useEffect, useState} from 'react'
 
-function Navbar({setUser}) {
+function Navbar({setUser, cartNum}) {
+  
+
+ 
 
   let navigate = useNavigate()
  
@@ -23,11 +28,11 @@ function Navbar({setUser}) {
       <nav className='navbar'>
         <img className='logo' src={bag} />
         <div className='nav-menu'>
-           <Link  to='/'>Home</Link> 
+           {/* <Link  to='/'>Home</Link> */}
           <Link to='/about'>About</Link>
-           <Link to='/Start_Shopping'>StartShopping</Link>
-          <Link to='/profile'>Profile</Link>
-          <Link to='/cart'>Cart</Link>
+           <Link to='/'>StartShopping</Link>
+          {/* <Link to='/profile'>Profile</Link> */}
+          <Link to='/cart'><div ><TiShoppingCart size={20}/><span className='cart-icon'>{cartNum.length}</span></div></Link>
           <Link to='/shoplist'>ShoppingList</Link>
           <button className = 'header-faker' onClick={logout}><TbLogout size={20}/></button>
         </div>

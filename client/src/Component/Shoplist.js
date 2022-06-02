@@ -12,7 +12,7 @@ const [runEffect, setRunEffect] = useState(true)
     .then(data => setLists(data))
   },[runEffect])
 
-  console.log(lists)
+  console.log('list',lists)
 
   // const mappedName = lists?.map(list => {
   //   return <ul><li>{list.name? list.name: "Give list a name"}</li></ul>
@@ -27,9 +27,13 @@ const [runEffect, setRunEffect] = useState(true)
 
   return (
     <div className='shoplist-page'>
-      <div className='shop-list-container'>
+      {lists.length ? <div className='shop-list-container'>
         {mappedName}
-      </div>
+      </div> :
+        <div>
+          <h1>Currently you don't have any shopping list.</h1>
+        </div>
+        }
     </div>
   )
 }
