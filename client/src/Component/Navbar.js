@@ -5,7 +5,7 @@ import { TbLogout } from 'react-icons/tb'
 import { useNavigate } from "react-router-dom"
 import  bag from '../Image/shopping-bag.png'
 import {TiShoppingCart} from 'react-icons/ti'
-import {useEffect, useState} from 'react'
+
 
 function Navbar({setUser, cartNum}) {
   

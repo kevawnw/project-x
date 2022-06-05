@@ -6,8 +6,8 @@ function ModalCards({item, setCartEffect}) {
 
   const [disbutton, setDisbutton] = useState(true)
 
-    function addToCart(){
-        fetch('/items',{
+   async function addToCart(){
+       await fetch('/items',{
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ function ModalCards({item, setCartEffect}) {
               .then(console.log)
               
         })
-        setDisbutton(false)
+       await setDisbutton(false)
         setCartEffect(prev => !prev)
       
       }
