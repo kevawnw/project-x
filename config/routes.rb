@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :shopping_lists
-  resources :shopping_list_items
-  resources :items
-  resources :users
+  resources :shopping_lists, only: [:create, :update, :destroy, :index, :show]
+  resources :shopping_list_items, only: [:create, :destroy, :index, :show]
+  resources :items, only: [:create, :update, :index, :show]
+  resources :users, only: [:create, :index, :show]
 
   resources :users do
     resources :shopping_lists do 
