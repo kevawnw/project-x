@@ -4,10 +4,15 @@ class Scraper
 
 attr_reader :url, :browser, :text, :combined_hash
 
+proxy = {
+    http: 'my.proxy.com:8080',
+    ssl:  'my.proxy.com:8080'
+  }
+
 def initialize(item)
     @url = "https://shopping.google.com/search?q=#{item}"
-    # @browser = Watir::Browser.new(:chrome, headless: true)
-    @browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222]
+    @browser = Watir::Browser.new(:chrome, headless: true, proxy: proxy)
+    # @browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222]
     @browser.goto(url)
     wait_until_element_exists()
     @name = get_text("MPhl6c pqv9ne azTb0d ulfEhd YAEPj XkyFEf")
