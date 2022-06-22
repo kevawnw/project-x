@@ -11,7 +11,7 @@ proxy = {
 
 def initialize(item)
     @url = "https://shopping.google.com/search?q=#{item}"
-    @browser = Watir::Browser.new(:chrome, headless: true, proxy: proxy)
+    @browser = Watir::Browser.new(:chrome, headless: true)
     # @browser = Watir::Browser.new :chrome, args: %w[--headless --no-sandbox --disable-dev-shm-usage --disable-gpu --remote-debugging-port=9222]
     @browser.goto(url)
     wait_until_element_exists()
